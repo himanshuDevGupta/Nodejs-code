@@ -1,0 +1,12 @@
+{
+  "name": "order-service",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "kafkajs": "^2.2.4",
+    "uuid": "^9.0.1"
+  }
+}
