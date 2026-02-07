@@ -53,3 +53,33 @@ promise.then(i => {
 // 4
 // undefined
 // 8
+
+const fetchItem = (id) =>
+  new Promise((resolve) =>
+    setTimeout(() => resolve(`Item ${id}`), 1000)
+  );
+ 
+const processItems = async () => {
+  const results = [1, 2, 3].map(async (id) => {
+    const item = await fetchItem(id);
+    return item;
+  });
+  console.log(results);
+};
+ 
+processItems();
+
+// output:
+// [ Promise { <pending> }, Promise { <pending> }, Promise { <pending> } ]
+
+
+const promise = new Promise((resolve, reject) => {
+  resolve("First");
+  resolve("Second");
+});
+promise.then(result => console.log(result));
+
+// ouput:
+// First
+
+
